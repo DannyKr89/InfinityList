@@ -11,8 +11,8 @@ import retrofit2.http.Query
 interface PostApi {
     @GET("/r/aww/hot.json")
     fun getPosts(
-        @Query("limit") limit:Int,
-        @Query("after") after:String
+        @Query("limit") limit: Int,
+        @Query("after") after: String
     ): Call<Post>
 
     companion object {

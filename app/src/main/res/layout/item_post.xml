@@ -1,37 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:background="#0D000000"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/post_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/post_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/post_name"
+    <ImageView
+        android:id="@+id/iv_post_score"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:src="@drawable/ic_score"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/post_title" />
+
 
     <TextView
         android:id="@+id/post_score"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iv_post_score"
+        app:layout_constraintStart_toEndOf="@id/iv_post_score"
+        app:layout_constraintTop_toTopOf="@id/iv_post_score" />
 
-    <TextView
-        android:id="@+id/post_title"
+    <ImageView
+        android:id="@+id/iv_post_comments"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:src="@drawable/ic_comments"
+        app:layout_constraintEnd_toStartOf="@id/post_comments_number"
+        app:layout_constraintTop_toBottomOf="@id/post_title" />
 
     <TextView
         android:id="@+id/post_comments_number"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_post_comments"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_post_comments" />
 
     <View
-        android:background="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="2dp"/>
+        android:layout_height="1dp"
+        android:background="#33000000"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

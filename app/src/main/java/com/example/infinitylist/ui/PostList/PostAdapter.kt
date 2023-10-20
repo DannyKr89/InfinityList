@@ -14,8 +14,6 @@ class PostAdapter : PagingDataAdapter<Children, PostAdapter.PostViewHolder>(CALL
 
         fun bind(children: Children) {
             binding.apply {
-                postId.text = children.data.id
-                postName.text = children.data.name
                 postScore.text = children.data.score.toString()
                 postTitle.text = children.data.title
                 postCommentsNumber.text = children.data.numberOfComments.toString()
